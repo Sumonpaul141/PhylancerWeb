@@ -1,0 +1,63 @@
+<% include ../partials/header %>
+
+
+
+
+<div class="container">
+	<div class="row">
+		<div class="col-sm-5" style="padding-top: 120px;">
+			<div style="background: #fafafa; padding: 100px">
+				<h1>Here you can Post a job As a Phylancer</h1>
+			</div>
+			
+		</div>
+		<div class="col-sm-7">
+				<div class="container" style=" padding-top: 75px; margin-bottom : 200px">
+
+					<h1 style="text-align: center;">Post a job Here</h1>
+					
+					<form action="/jobs" method="POST">
+						<div class="form-group">
+							<label>Job Title</label>
+							<input type="text" class="form-control" name="name" placeholder="Ex: Need Some RAndom Worker">
+						</div>
+						<div class="form-group">
+							<label>Job Description</label>
+							<input type="text" class="form-control" name="description" placeholder="Ex: Put the job description here">
+						</div>
+						<div class="form-group">
+							<label>Contact no</label>
+							<input type="number" class="form-control" name="phone" placeholder="Ex : 016XXXXXXXX">
+						</div>
+						<div class="form-group">
+							<label>Image Url</label>
+							<input type="text" class="form-control" name="image" placeholder="http://www.google.com/images.png">
+						</div>
+						<div class="form-group">
+						  <label for="sel1">Select Area: </label>
+						  	<select class="form-control" id="sel1">
+							    <option>Dhaka</option>
+							    <option>Chittagong</option>
+							    <option>Sylhet</option>
+							    <option>Barishal</option> 
+						 	 </select>
+						</div>
+						
+						<button type="Submit" class="btn btn-primary" style="margin-left: 25%; width: 50%">Submit</button>
+					</form>
+				</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<% include ../partials/footer %>

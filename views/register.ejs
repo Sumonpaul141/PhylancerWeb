@@ -1,0 +1,24 @@
+<% include ../partials/header %>
+
+
+<div class="container" style="padding-top: 5%">
+	<hr>
+	<h1 style="text-align: center">Be a member...</h1>
+	<hr>
+		<form action="/register" method="POST">
+				  <div class="form-group">
+				    <label for="text">User Name:</label>
+				    <input type="text" class="form-control" id="email" name="username">
+				  </div>
+				  <div class="form-group">
+				    <label for="pwd">Password:</label>
+				    <input type="password" class="form-control" id="pwd" name="password">
+				  </div>
+				  <button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+</div>
+
+
+
+
+<% include ../partials/footer %>

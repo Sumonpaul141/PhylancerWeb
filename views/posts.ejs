@@ -1,0 +1,85 @@
+<% include ../partials/header %>
+
+
+
+
+<div style="margin-top: 150px; border: 1px solid #b3cec2 ; margin-bottom : 20px; background: #cdd7c8" class="container">
+	<div style="text-align: center" >
+		<h1> <%= job.name %> </h1>
+		<img src="<%= job.image%>" style=" width: 40%; height: 30%">
+		<h5><strong> Contact Number :</strong> <%= job.phone%></h5>
+		<p><strong>Job description</strong></p>
+		<p><%= job.description %></p>
+		<p><em>Submitted By : <u><strong><%= job.user.username %></strong></u></em></p>
+		<!-- <p>
+		<a class="btn btn-success" href="/postdetails/<%= job._id%>/bid/new">Bid for this Job</a>
+		</p> -->
+		
+	
+	</div>
+
+</div>
+
+<div class="container">
+<div class="row">
+
+				<div class="col-sm-6" style="background: #cdd7c8">
+					<h1>All Bids Here</h1>
+					
+						<hr>
+						<% if (job.bid.length == 0){ %>
+
+						
+						<h4>No bids for this job. Be the first Bidder..</h4>
+
+
+						<%}%>
+
+
+				<%  for (var i = job.bid.length - 1; i >= 0; i--) {   %>
+
+
+
+
+						<% if (i%2 == 0){ %>
+						<div style="margin-top: 0px; border-top: 1px solid #071449 ; border-bottom: 1px solid #071449; margin-bottom : 20px" class="container">
+								<div style="text-align: center" >
+									<h5> <strong> <%= job.bid[i].user.username %></strong></h5>
+									<p> <%= job.bid[i].comment %></p> <span> <%= job.bid[i].amount %></span>
+								
+								</div>
+						</div>
+					<%}else{ %>%>
+							<div style="margin-top: 0px; border-left: 1px solid red ; border-right: 1px solid red; margin-bottom : 20px" class="container">
+								<div style="text-align: center" >
+									<h5> <strong> <%= job.bid[i].user.username %></strong></h5>
+									<p> <%= job.bid[i].comment %></p> <span> <%= job.bid[i].amount %></span>
+								
+								</div>
+						</div>
+				     <%}%>
+
+				<% } %>
+				</div>
+				<div class="col-sm-6">
+						<div style=" border: 1px solid #b3cec2 ; background: #cdd7c8" class="container">
+								<div style="text-align: center" >	
+									<h1>Bid For this Job</h1>
+										<form action="/postdetails/<%= job._id %>/bid" method="POST">
+											
+											<div class="form-group">
+												<label>Comment</label>
+												<input type="text" class="form-control" name="bid[comment]" placeholder="Comment">
+											</div>
+											<div class="form-group">
+												<label>Bid Amount</label>
+												<input type="number" class="form-control" name="bid[amount]" placeholder="Amount">
+											</div>
+											<button type="Submit" class="btn btn-primary" style=" width: 50%">Bid</button>
+										</form>
+								</div>
+						</div>
+				</div>
+</div>
+</div>
+<% include ../partials/footer %>

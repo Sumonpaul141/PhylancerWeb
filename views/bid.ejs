@@ -1,0 +1,32 @@
+<% include ../partials/header %>
+
+
+
+
+
+
+<div class="container" style=" padding-top: 75px; margin-bottom : 200px">
+
+	<h1>Bid For << <%= job.name %> >></h1>
+	
+	<form action="/postdetails/<%= job._id %>/bid" method="POST">
+		<div class="form-group">
+			<label>User Name</label>
+			<input type="text" class="form-control" name="bid[user]" placeholder="user name">
+		</div>
+		<div class="form-group">
+			<label>Comment</label>
+			<input type="text" class="form-control" name="bid[comment]" placeholder="Comment">
+		</div>
+		<div class="form-group">
+			<label>Bid Amount</label>
+			<input type="number" class="form-control" name="bid[amount]" placeholder="Amount">
+		</div>
+		
+		
+		<button type="Submit" class="btn btn-primary" style="margin-left: 25%; width: 50%">Submit that Bid</button>
+	</form>
+</div>
+
+
+
